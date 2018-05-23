@@ -208,11 +208,11 @@ namespace Exeec
                         }
 
                     }
-                    else if(opcion_ver == "2")
+                    else if(opcion_ver == "3")
                     {
 
                     }
-                    else if(opcion_ver == "3")
+                    else if(opcion_ver == "2")
                     {
                         int j = 0;
                         foreach(Car auto in autos)
