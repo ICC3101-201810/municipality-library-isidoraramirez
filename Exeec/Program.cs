@@ -210,7 +210,53 @@ namespace Exeec
                     }
                     else if(opcion_ver == "3")
                     {
+                        int j = 0;
+                        foreach (Address dir in direcciones)
+                        {
+                            Console.WriteLine(j + ". " + dir.Street + " " + dir.Number+ " " + dir.City+ " "+ dir.Commune);
+                            j++;
+                        }
+                        Console.WriteLine("Seleccione una direccion: ");
+                        Address add = direcciones[Convert.ToInt32(Console.ReadLine())];
+                        Console.WriteLine("Ingrese que quiere  hacer:" +
+                                          "1. Ver año construccion\n" +
+                                          "2. Ver piezas\n" +
+                                          "3. ver baños\n" +
+                                          "4. Patio\n" +
+                                          "5. Cambiar dueño\n" +
+                                          "6. Agregar piezas\n" +
+                                          "7. Agregar baños\n");
+                        string o = Console.ReadLine();
+                        if (o == "1") { Console.WriteLine(add.Year_of_contruction); }
+                        if (o == "2") { Console.WriteLine(add.Bedrooms); }
+                        if (o == "3") { Console.WriteLine(add.Bathrooms); }
+                        if (o == "4") { Console.WriteLine(add.Backyard); }
+                        if(o == "5")
+                        {
+                            int h = 0;
+                            foreach (Person persona in personas)
+                            {
+                                Console.WriteLine(h + ". " + persona.First_name + " " + persona.Last_name);
+                                h++;
+                            }
+                            Console.WriteLine("Seleccione el nuevo dueño: ");
+                            Person p1 = personas[Convert.ToInt32(Console.ReadLine())];
+                            add.changeOwner(p1);
+                        }
+                        if(o == "7")
+                        {
+                            Console.WriteLine("Ingrese baños a agregar: ");
+                            int nuevob = add.Bathrooms + Convert.ToInt32(Console.ReadLine());
+                            add.addBathrooms(Convert.ToInt32(Console.ReadLine()));
+                        }
+                        if(o == "6")
+                        {
+                            Console.WriteLine("Ingrese piezas a agregar: ");
+                            add.addBeedrooms(Convert.ToInt32(Console.ReadLine()));
+                            
 
+
+                        }
                     }
                     else if(opcion_ver == "2")
                     {
@@ -220,8 +266,8 @@ namespace Exeec
                             Console.WriteLine(j + ". "+ auto.Model+ " "+ auto.Brand);
                             j++;
                         }
+                        Console.WriteLine("Seleccione una Propiedad: ");
                         Car cars = autos[Convert.ToInt32(Console.ReadLine())];
-
                         Console.WriteLine("Ingrese que quiere ver: \n" +
                                           "1. Año\n" +
                                           "2. Patente\n" +
