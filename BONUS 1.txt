@@ -1,0 +1,6 @@
+Hay un error que se encuentra en el constructor de la persona, ya que en este se llama dos veces a persona en donde deberia ir professional_degree y rut. Tambien llama a adress donde se deberia poner el alma_mater y en adress se llama persona donde deberia ir el Year_of_construction. (Asumiendo que las propiedades se ingresan en el orden que salió en la consola)
+
+Constructor Persona: 
+Void .ctor(System.String, System.String, System.DateTime, ClassLibrary1.Address, System.String, ClassLibrary1.Person, ClassLibrary1.Person)
+Constructor Adress:
+Void .ctor(System.String, Int32, System.String, System.String, ClassLibrary1.Person, Int32, Int32, Int32, Boolean, Boolean)
