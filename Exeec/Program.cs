@@ -218,6 +218,7 @@ namespace Exeec
                         foreach(Car auto in autos)
                         {
                             Console.WriteLine(j + ". "+ auto.Model+ " "+ auto.Brand);
+                            j++;
                         }
                         Car cars = autos[Convert.ToInt32(Console.ReadLine())];
 
