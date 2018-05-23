@@ -27,7 +27,8 @@ namespace Exeec
                                   "1. Persona\n" +
                                   "2. Propiedad\n" +
                                   "3. Automovil\n" +
-                                  "4. Salir\n" +
+                                  "4. Metodos\n" +
+                                  "5. Salir\n" +
                                   "Opcion: ");
                 string opcion_menu = Console.ReadLine();
                 if (opcion_menu == "1")
@@ -69,6 +70,7 @@ namespace Exeec
                     foreach(Person persona in personas)
                     {
                         Console.WriteLine(i + ". " + persona.First_name + " "+ persona.Last_name);
+                        i++;
                     }
                     Person p1 = personas[Convert.ToInt32(Console.ReadLine())];
                     Console.WriteLine("Ingrese la patente: ");
@@ -106,6 +108,7 @@ namespace Exeec
                     foreach (Person persona in personas)
                     {
                         Console.WriteLine(i + ". " + persona.First_name + " " + persona.Last_name);
+                        i++;
                     }
                     Person p1 = personas[Convert.ToInt32(Console.ReadLine())];
                     Console.WriteLine("Ingrese el año de construccion: ");
@@ -133,10 +136,106 @@ namespace Exeec
                     goto menu;
 
                 }
-                else if(opcion_menu == "4")
+                else if(opcion_menu == "5")
                 {
                     Console.WriteLine("Adios :(");
                     loop = false;
+                }
+                while(opcion_menu == "4")
+                {
+                    Console.WriteLine("------------ METODOS ------------");
+                    Console.WriteLine("Ingrese que quiere usar los metodos: \n" +
+                                      "1. Personas\n" +
+                                      "2. Propiedades\n" +
+                                      "3. Direcciones\n  " +
+                                      "4. Salir");
+                    string opcion_ver = Console.ReadLine();
+                    if(opcion_ver == "1")
+                    {
+                        int i = 0;
+                        foreach (Person persona in personas)
+                        {
+                            Console.WriteLine(i + ". " + persona.First_name + " " + persona.Last_name);
+                            i++;
+                        }
+                        Console.WriteLine("Seleccione una persona: ");
+                        Person p1 = personas[Convert.ToInt32(Console.ReadLine())];
+                        Console.WriteLine("Que Desea hacer?");
+                        Console.WriteLine("1. Cambiar nombre\n" +
+                                          "2. Cambiar apellido\n" +
+                                          "3. Ser adoptado\n" +
+                                          "4. Ser Abandonado\n" +
+                                          "5. Especificar Educacion\n" +
+                                          "6. Salir");
+                        string o_persona = Console.ReadLine();
+                        if (o_persona== "1")
+                        {
+                            Console.WriteLine("Ingrese el nuevo nombre: ");
+                            string nnombre = Console.ReadLine();
+                            p1.changeFirstName(nnombre);
+                        }
+                        else if (o_persona == "2")
+                        {
+                            Console.WriteLine("Ingrese el nuevo apellido: ");
+                            string napellido = Console.ReadLine();
+                            p1.changeLastName(napellido);
+                        }
+                        else if(o_persona == "5")
+                        {
+                            Console.WriteLine("Ingrese Alma Mater: ");
+                            string almamater;
+                            if (p1.Alma_mater == "") { almamater = Console.ReadLine(); }
+                            else { almamater = p1.Alma_mater; }
+                            Console.WriteLine("Infique el titulo: ");
+                            string educacion = Console.ReadLine();
+                            p1.setEducation(almamater, educacion);
+                        }
+                        else if(o_persona == "4")
+                        {
+                            p1.getAbandoned();
+                        }
+                        else if (o_persona == "3")
+                        {
+                            int j = 0;
+                            foreach (Person persona in personas)
+                            {
+                                Console.WriteLine(j + ". " + persona.First_name + " " + persona.Last_name);
+                                j++;
+                            }
+                            Console.WriteLine("Seleccione por quien sera adoptado: ");
+                            Person papa = personas[Convert.ToInt32(Console.ReadLine())];
+                            p1.getAdopted(papa);
+                        }
+
+                    }
+                    else if(opcion_ver == "2")
+                    {
+
+                    }
+                    else if(opcion_ver == "3")
+                    {
+                        int j = 0;
+                        foreach(Car auto in autos)
+                        {
+                            Console.WriteLine(j + ". "+ auto.Model+ " "+ auto.Brand);
+                        }
+                        Car cars = autos[Convert.ToInt32(Console.ReadLine())];
+
+                        Console.WriteLine("Ingrese que quiere ver: \n" +
+                                          "1. Año\n" +
+                                          "2. Patente\n" +
+                                          "3. Cinturones\n" +
+                                          "4. Diesel\n");
+                        string oauto = Console.ReadLine();
+                        if (oauto == "1") { Console.WriteLine(cars.Year); }
+                        if (oauto == "2") { Console.WriteLine(cars.License_plate); }
+                        if (oauto == "3") { Console.WriteLine(cars.Seatbelts); }
+                        if (oauto == "4") { Console.WriteLine(cars.Diesel); }
+                    }
+                    else
+                    {
+                        opcion_menu = " ";
+                    }
                 }
             }
         }

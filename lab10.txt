@@ -1,0 +1,145 @@
+Address
+Popiedades
+Propiedades: System.String Street
+Propiedades: Int32 Number
+Propiedades: System.String Commune
+Propiedades: System.String City
+Propiedades: Int32 Year_of_contruction
+Propiedades: Int32 Bedrooms
+Propiedades: Int32 Bathrooms
+Propiedades: Boolean Backyard
+-----------------------
+Metodos:
+Metodos: System.String get_Street()
+Metodos: Int32 get_Number()
+Metodos: System.String get_Commune()
+Metodos: System.String get_City()
+Metodos: Int32 get_Year_of_contruction()
+Metodos: Int32 get_Bedrooms()
+Metodos: Int32 get_Bathrooms()
+Metodos: Boolean get_Backyard()
+Metodos: Void changeOwner(ClassLibrary1.Person)
+Metodos: Boolean addBeedrooms(Int32)
+Metodos: Boolean addBathrooms(Int32)
+Metodos: System.String ToString()
+Metodos: Boolean Equals(System.Object)
+Metodos: Int32 GetHashCode()
+Metodos: System.Type GetType()
+------------------------
+Constructor
+Constructor: Void .ctor(System.String, Int32, System.String, System.String, ClassLibrary1.Person, Int32, Int32, Int32, Boolean, Boolean)
+---------------------------------
+
+Car
+Popiedades
+Propiedades: System.String Brand
+Propiedades: System.String Model
+Propiedades: Int32 Year
+Propiedades: System.String License_plate
+Propiedades: Int32 Seatbelts
+Propiedades: Boolean Diesel
+-----------------------
+Metodos:
+Metodos: System.String get_Brand()
+Metodos: System.String get_Model()
+Metodos: Int32 get_Year()
+Metodos: System.String get_License_plate()
+Metodos: Int32 get_Seatbelts()
+Metodos: Boolean get_Diesel()
+Metodos: Void giveUpOwnershipToThirdParty(ClassLibrary1.Person)
+Metodos: System.String ToString()
+Metodos: Boolean Equals(System.Object)
+Metodos: Int32 GetHashCode()
+Metodos: System.Type GetType()
+------------------------
+Constructor
+Constructor: Void .ctor(System.String, System.String, Int32, ClassLibrary1.Person, System.String, Int32, Boolean)
+---------------------------------
+
+Class1
+Popiedades
+-----------------------
+Metodos:
+Metodos: System.String ToString()
+Metodos: Boolean Equals(System.Object)
+Metodos: Int32 GetHashCode()
+Metodos: System.Type GetType()
+------------------------
+Constructor
+Constructor: Void .ctor()
+---------------------------------
+
+Person
+Popiedades
+Propiedades: System.String First_name
+Propiedades: System.String Last_name
+Propiedades: System.DateTime Birth_date
+Propiedades: System.String Alma_mater
+Propiedades: System.String Professional_degree
+Propiedades: System.String Rut
+-----------------------
+Metodos:
+Metodos: System.String get_First_name()
+Metodos: System.String get_Last_name()
+Metodos: System.DateTime get_Birth_date()
+Metodos: System.String get_Alma_mater()
+Metodos: System.String get_Professional_degree()
+Metodos: System.String get_Rut()
+Metodos: Void changeFirstName(System.String)
+Metodos: Void changeLastName(System.String)
+Metodos: Void giveUpOwnershipToThirdParty(ClassLibrary1.Person)
+Metodos: Boolean getAdopted(ClassLibrary1.Person)
+Metodos: Boolean getAdopted(ClassLibrary1.Person, ClassLibrary1.Person)
+Metodos: Void getAbandoned()
+Metodos: Boolean setEducation(System.String, System.String)
+Metodos: System.String ToString()
+Metodos: Boolean Equals(System.Object)
+Metodos: Int32 GetHashCode()
+Metodos: System.Type GetType()
+------------------------
+Constructor
+Constructor: Void .ctor(System.String, System.String, System.DateTime, ClassLibrary1.Address, System.String, ClassLibrary1.Person, ClassLibrary1.Person)
+---------------------------------
+BONUS:
+
+El error esta en que para crear una persona hay que crear un adress y para crear un adress hay que crear una persona
+
+
+            /*
+            Type[] tipos = assembly.GetTypes();
+
+            foreach(Type tipo in tipos)
+            {
+                
+                PropertyInfo[] propertyinfo = tipo.GetProperties();
+                String nombre = tipo.Name;
+                MethodInfo[] metodosinfo = tipo.GetMethods();
+                ConstructorInfo[] constructorinfo = tipo.GetConstructors();
+
+                Console.WriteLine(nombre);
+                Console.WriteLine("Popiedades");
+
+                foreach (PropertyInfo propiedad in propertyinfo)
+                {
+                    Console.WriteLine("Propiedades: " + propiedad);
+
+                }
+                Console.WriteLine("-----------------------\nMetodos:");
+                foreach(MethodInfo metodo in metodosinfo)
+                {
+                    Console.WriteLine("Metodos: " + metodo + "Tipo: "+metodo.Attributes);
+
+                }
+                Console.WriteLine("------------------------\nConstructor");
+                foreach(ConstructorInfo constructor in constructorinfo)
+                {
+                    Console.WriteLine("Constructor: " + constructor + ""+ constructor.CustomAttributes);
+
+                }
+                Console.WriteLine(  "---------------------------------\n");
+
+
+            }
+
+
+            Console.ReadLine();*/
